@@ -1,4 +1,17 @@
 "use strict";
+var debug = require('debug')('nodemon');
+var path = require('path');
+var monitor = require('./monitor');
+var cli = require('./cli');
+var version = require('./version');
+var util = require('util');
+var utils = require('./utils');
+var bus = utils.bus;
+var help = require('./help');
+var config = require('./config');
+var spawn = require('./spawn');
+const defaults = require('./config/defaults')
+var eventHandlers = {};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
